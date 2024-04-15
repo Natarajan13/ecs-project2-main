@@ -2,7 +2,7 @@ version: "3"
 services:
   api:
     build: .
-    image: kodekloud/ecs-project2
+    image: natarajandocker/ecsdemowithdb
     environment:
       - MONGO_USER=mongo
       - MONGO_PASSWORD=password
@@ -19,4 +19,4 @@ services:
       - mongo-db:/data/db
 
 volumes:
-  mongo-db
+  mongo-db:
