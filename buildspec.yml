@@ -5,6 +5,7 @@ phases:
     commands:
       - echo Logging in to AWS ECR
       - aws --version
+      # - changed
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 438217037539.dkr.ecr.us-east-1.amazonaws.com
       - REPOSITORY_URI=438217037539.dkr.ecr.us-east-1.amazonaws.com/vw-demo-ecr
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
